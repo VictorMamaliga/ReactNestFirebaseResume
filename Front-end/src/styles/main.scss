@@ -1,0 +1,140 @@
+// Variables
+$primary-color: #5A67D8;
+$light-color: #F7FAFC;
+$dark-color: #2D3748;
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$transition: all 0.3s ease-in-out;
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+
+body {
+    //width: 100vw;
+    //height: 100vh;
+    background-color: $light-color;
+    color: $dark-color;
+}
+
+nav {
+    width: 100vw;
+    //height: 100vh;
+    background-color: $primary-color;
+    color: $light-color;
+    padding: 20px 0;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+    }
+
+    a {
+        color: $light-color;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            color: darken($light-color, 10%);
+        }
+    }
+}
+
+.home-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.5em;
+        color: darken($dark-color, 10%);
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 10px 30px;
+        background-color: $primary-color;
+        color: $light-color;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}
+
+.about-container {
+    width: 60vw;
+    height: 100vh;
+    margin: auto;
+    padding: 50px 0;
+    text-align: center;
+
+    h1 {
+        font-size: 2.5em;
+        color: $dark-color;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .skills-container {
+        h2 {
+            font-size: 2em;
+            color: $dark-color;
+            margin-bottom: 20px;
+        }
+
+        .skill {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: $dark-color;
+
+            .skill-level {
+                width: 70%;
+                height: 20px;
+                background-color: lighten($dark-color, 30%);
+                border-radius: 10px;
+                overflow: hidden;
+
+                .progress {
+                    height: 100%;
+                    background-color: $primary-color;
+                    transition: $transition;
+                }
+            }
+        }
+    }
+}

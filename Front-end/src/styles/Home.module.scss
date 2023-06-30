@@ -1,0 +1,50 @@
+@import './variables.scss'; // import variables
+@import './general.scss';
+
+.homeContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+
+    .profile_img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.5em;
+        color: darken($dark-color, 10%);
+        margin-bottom: 30px;
+    }
+
+    .cta_button {
+        display: inline-block;
+        padding: 10px 30px;
+        background-color: $primary-color;
+        color: $light-color;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+
+    // Other styles for the home component
+}

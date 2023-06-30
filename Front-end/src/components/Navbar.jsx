@@ -1,13 +1,13 @@
-
+import styles from '../styles/Navbar.module.scss';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <nav>
             <ul>
-                <li>
+                {/* <li>
                     <Link to="/">Home</Link>
-                </li>
+                </li> */}
                 <li>
                     <Link to="/Home">Victor Home</Link>
                 </li>
@@ -20,6 +20,9 @@ const Navbar = () => {
                 </li>
                 <li>
                     <Link to="/Contact">Contact</Link>
+                </li>
+                <li>
+                    <Link to="/SignIn">SignIn</Link>
                 </li>
 
             </ul>

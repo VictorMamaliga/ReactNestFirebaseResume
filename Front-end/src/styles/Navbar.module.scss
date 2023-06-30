@@ -1,0 +1,27 @@
+@import './variables.scss'; // import variables
+@import './general.scss';
+
+
+nav {
+    width: 100vw;
+    //height: 100vh;
+    background-color: $primary-color;
+    color: $light-color;
+    padding: 20px 0;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+    }
+
+    a {
+        color: $light-color;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            color: darken($light-color, 10%);
+        }
+    }
+}

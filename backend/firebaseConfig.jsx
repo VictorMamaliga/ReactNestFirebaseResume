@@ -31,15 +31,15 @@ export const useProjects = () => {
   return projects;
 };
 
-export const submitData = async (data) => {
+export const submitData = async (data, onSuccess) => {
   const myCollection = collection(db, 'projects');
   try {
-    const docRef = await addDoc(myCollection, data);
-    console.log('Document written with ID: ', docRef.id);
-    return docRef.id;
+      const docRef = await addDoc(myCollection, data);
+      console.log('Document written with ID: ', docRef.id);
+      onSuccess && onSuccess();
   } catch (error) {
-    console.error("Error adding document: ", error);
-    throw error;
+      console.error("Error adding document: ", error);
+      throw error;
   }
 }
 

@@ -1,6 +1,7 @@
 @import './variables.scss'; // import variables
 @import './general.scss';
 
+
 .pageContainer {
     width: 95vw;
     display: flex;
@@ -44,6 +45,9 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 200px;
+        font-family: 'pricedown bl';
+        src: local('pricedown bl'), url(../../fonts/pricedown\ bl.otf) format('otf'), url(../../fonts/pricedown/bl.otf) format('otf');
+        font-weight: 300;
 
         p {
             font-size: 1.5em;
@@ -53,7 +57,7 @@
 
         .buttonsContainer {
             display: flex;
-            
+
             flex-direction: column;
             justify-content: center;
             gap: 10px;

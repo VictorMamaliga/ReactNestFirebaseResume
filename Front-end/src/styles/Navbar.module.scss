@@ -2,12 +2,41 @@
 @import './general.scss';
 
 
-nav {
+
+.backgroundBlur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
     width: 100vw;
-    //height: 100vh;
+    background: url("https://e0.pxfuel.com/wallpapers/164/889/desktop-wallpaper-romania-manelist-nicolae-guta-romania-manelist-nicolae-guta.jpg") no-repeat center center;
+    background-size: contain;
+    z-index: -1;
+    filter: blur(0px);
+    transition: filter 1s linear;
+}
+
+.backgroundUnblur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url("https://img.a1.ro/?u=https%3A%2F%2Fa1.ro%2Fuploads%2Fmodules%2Fnews%2F0%2F2018%2F11%2F28%2F822872%2F154341534697a2e89d.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+
+
+nav {
+    position: fixed;
+    width: 100vw;
     background-color: $primary-color;
     color: $light-color;
     padding: 20px 0;
+    z-index: 100;
 
     ul {
         display: flex;
@@ -24,4 +53,41 @@ nav {
             color: darken($light-color, 10%);
         }
     }
+
+    .blur {
+        animation: blur 2s forwards;
+    }
+
+    .unblur {
+        animation: unblur 2s forwards;
+    }
+
+    @keyframes blur {
+        0% {
+            filter: blur(0px);
+        }
+
+        100% {
+            filter: blur(4px);
+        }
+    }
+
+    @keyframes unblur {
+        0% {
+            filter: blur(4px);
+        }
+
+        100% {
+            filter: blur(0px);
+        }
+    }
+}
+
+.progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: $light-color;
+    z-index: 101;
 }

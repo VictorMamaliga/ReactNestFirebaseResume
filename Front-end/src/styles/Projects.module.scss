@@ -1,9 +1,9 @@
 @import './variables.scss'; // import variables
 @import './general.scss';
 
-#projectsContainer {
+.projectsContainer {
     padding: 50px 0;
-    height: 100vh;
+    height: 150vh;
 
     .container {
         width: 90%;

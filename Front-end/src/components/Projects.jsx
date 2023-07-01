@@ -7,7 +7,7 @@ const Projects = () => {
     const projects = useProjects();
 
     return (
-        <section id={styles.projectsContainer}>
+        <section id="projects" className={styles.projectsContainer}>
             <div className={styles.container}>
                 <h2>Projects</h2>
                 <div className={styles.projectsGrid}>

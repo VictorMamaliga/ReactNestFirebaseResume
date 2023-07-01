@@ -9,8 +9,8 @@ import styles from '../styles/LandingPage.module.scss';
 
 const LandingPage = () => {
     const buttons = [
-        { text: 'Call Regele!', link: '#contact', style: { position: 'absolute', top: '10%', left: '80%' } },
-        { text: 'See The Kings!', link: '#projects', style: { position: 'absolute', top: '40%', left: '10%' } },
+        { text: 'Call Regele!', link: '#contact' },
+        { text: 'See The Kings!', link: '#projects' },
         { text: 'Break Matrix!', link: '#signIn', style: { position: 'absolute', top: '70%', left: '60%' } },
         // Add more buttons here with random positions
     ];

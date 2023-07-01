@@ -2,7 +2,7 @@
     position: relative;
     color: aqua;
     width: 220px;
-    height: 53px;
+    height: 45px;
     border-radius: 50px;
     background-color: transparent;
     overflow: hidden;
@@ -25,11 +25,12 @@
   span {
     font-size: 40px;
     display: inline-block;
-    min-width: 100vw;
+    min-width: 100%;
     margin: 0px;
     padding: 0px;
     background-color: transparent;
     color: black;
+    position: relative;
   }
   
   .mscroll:hover {

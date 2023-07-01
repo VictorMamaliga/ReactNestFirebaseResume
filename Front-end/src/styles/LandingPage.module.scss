@@ -3,14 +3,17 @@
 
 
 .pageContainer {
-    width: 95vw;
+    width: 100%;
     display: flex;
     // flex-direction: ;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 1300px;
     overflow: auto;
 
+    
+    max-width: 2200px;
+    margin-left: 200px;
     @media (max-width: 900px) {
         height: auto;
     }
@@ -25,8 +28,8 @@
         align-items: center;
 
         .profile_img {
-            width: 300px;
-            height: 300px;
+            width: 600px;
+            height: 600px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
@@ -34,7 +37,7 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 8.5em;
             margin-bottom: 10px;
         }
     }
@@ -45,18 +48,18 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 200px;
-        font-family: 'pricedown bl';
-        src: local('pricedown bl'), url(../../fonts/pricedown\ bl.otf) format('otf'), url(../../fonts/pricedown/bl.otf) format('otf');
+
         font-weight: 300;
 
         p {
-            font-size: 1.5em;
+            font-size: 5.5em;
             color: darken($dark-color, 10%);
             margin-bottom: 30px;
         }
 
         .buttonsContainer {
             display: flex;
+            position: relative;
 
             flex-direction: column;
             justify-content: center;
@@ -78,4 +81,24 @@
             background-color: darken($primary-color, 10%);
         }
     }
+
 }
+
+// @media (min-width: 1200px) {
+//     .buttonsContainer {
+//         position: absolute;
+//         top: 10%;
+//         left: 80%;
+//     }
+// }
+
+// /* And another for smaller screens */
+// @media (max-width: 1199px) {
+//     .buttonsContainer {
+//         position: absolute;
+//         top: 20%;
+//         /* adjust the position as needed for smaller screens */
+//         left: 70%;
+//         /* adjust the position as needed for smaller screens */
+//     }
+// }

@@ -9,9 +9,9 @@ import LandingPage from './LandingPage';
 
 const Home = () => {
     const buttons = [
-        { text: 'Call Regele!', link: '#contact', style: { position: 'absolute', top: '0%', left: '80%' } },
-        { text: 'See The Kings!', link: '#projects', style: { position: 'absolute', top: '40%', left: '10%' } },
-        { text: 'Break Matrix!', link: '#signIn', style: { position: 'absolute', top: '70%', left: '60%' } },
+        { text: 'Call Regele!', link: '#contact' },
+        { text: 'See The Kings!', link: '#projects' },
+        { text: 'Break Matrix!', link: '#signIn' },
     ];
 
     return (
@@ -21,9 +21,11 @@ const Home = () => {
             <Projects />
             <Contact />
             <SignIn />
-            {buttons.map((button, index) => (
-                <Button key={index} buttonText={button.text} href={button.link} customStyle={button.style} />
-            ))}
+            <div className={styles.buttonsWrapper}>
+                {buttons.map((button, index) => (
+                    <Button key={index} buttonText={button.text} href={button.link} customStyle={button.style} />
+                ))}
+            </div>
         </div>
     );
 };

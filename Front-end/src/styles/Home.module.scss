@@ -1,7 +1,7 @@
 @import './variables.scss'; // import variables
 
 .home-container {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,13 @@
     justify-content: center;
     padding: 50px;
     text-align: center;
+    margin-left: 2000px;
+    //font-family: Pricedown;
 
-    // Other styles for the home component
+    .buttonsWrapper {
+        display: flex;
+        gap: 20px; // Adjust this value as per your requirements
+        flex-wrap: wrap;
+        justify-content: center; // Center the buttons horizontally
+    }
 }

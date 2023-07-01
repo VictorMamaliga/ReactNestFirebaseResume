@@ -1,0 +1,77 @@
+@import './variables.scss'; // import variables
+@import './general.scss';
+
+.pageContainer {
+    width: 95vw;
+    display: flex;
+    // flex-direction: ;
+    justify-content: space-around;
+    align-items: center;
+    height: 1300px;
+    overflow: auto;
+
+    @media (max-width: 900px) {
+        height: auto;
+    }
+
+
+
+
+    .leftSide {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .profile_img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            margin-top: 200px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+    }
+
+    .rightSide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 200px;
+
+        p {
+            font-size: 1.5em;
+            color: darken($dark-color, 10%);
+            margin-bottom: 30px;
+        }
+
+        .buttonsContainer {
+            display: flex;
+            
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+
+    .cta_button {
+        padding: 10px 30px;
+        background-color: $primary-color;
+        color: $light-color;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}

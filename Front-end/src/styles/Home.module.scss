@@ -1,65 +1,14 @@
 @import './variables.scss'; // import variables
-@import './general.scss';
 
-.homeContainer {
-    width: 95vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.home-container {
+    width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
 
-    .leftSide {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .profile_img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-    }
-
-    .rightSide {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        p {
-            font-size: 1.5em;
-            color: darken($dark-color, 10%);
-            margin-bottom: 30px;
-        }
-
-        .buttonsContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-    }
-
-    .cta_button {
-        padding: 10px 30px;
-        background-color: $primary-color;
-        color: $light-color;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
-        transition: $transition;
-
-        &:hover {
-            background-color: darken($primary-color, 10%);
-        }
-    }
+    // Other styles for the home component
 }

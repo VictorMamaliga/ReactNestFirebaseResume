@@ -1,5 +1,7 @@
 import { useProjects } from "../../../backend/firebaseConfig";
 import styles from '../styles/Projects.module.scss'
+import AddElementModal from './AddElementModal'; // Import the AddElementModal component
+
 
 const Projects = () => {
 
@@ -10,6 +12,8 @@ const Projects = () => {
         <section id="projects" className={styles.projectsContainer}>
             <div className={styles.container}>
                 <h2>Projects</h2>
+                <AddElementModal />  
+
                 <div className={styles.projectsGrid}>
                     {projects.map((project, index) => (
                         <div className={styles.projectItem} key={index}>

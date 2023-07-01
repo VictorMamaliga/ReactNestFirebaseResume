@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-hook-form": "^7.45.1",
+    "react-modal": "^3.16.1"
+  }
+}

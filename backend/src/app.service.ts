@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { collection, addDoc } from 'firebase/firestore/lite'; 
 
 @Injectable()
 export class AppService {
   getHello(): string {
-    // aici faci logica de adaugare
+    
     return 'Hello NIcolae!';
   }
 }

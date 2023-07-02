@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { useForm } from 'react-hook-form';
-import { submitData } from '../../../backend/firebaseConfig';
+import { useProjects } from '../api/useApi';
 
 Modal.setAppElement('#root');
 
 const AddElementModal = () => {
     const { register, handleSubmit, reset } = useForm();
     const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const { submitData } = useProjects();
 
     const onSuccess = () => {
         reset();

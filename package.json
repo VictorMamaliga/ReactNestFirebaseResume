@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "firebase-admin": "^11.9.0",
     "react-hook-form": "^7.45.1",
     "react-modal": "^3.16.1"
   }

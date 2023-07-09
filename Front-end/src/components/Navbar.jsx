@@ -27,7 +27,7 @@ const Navbar = ({ onLinkClick }) => {
             setHasStartedScrolling(true);
         }
 
-        const unblurIndex = Math.floor(totalScroll / 600);
+        const unblurIndex = Math.floor(totalScroll / 800);
 
         if (unblurIndex >= 0 && unblurIndex < linkRefs.current.length) {
             setCurrentUnblurIndex(unblurIndex);

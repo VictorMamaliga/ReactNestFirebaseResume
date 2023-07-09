@@ -4,16 +4,17 @@ import React, { useState } from 'react';
 import './App.css';
 import './styles/main.scss';
 
-import Home from './components/Home';
+import Home from './components/home';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import SignIn from './components/SignIn';
 import AddElementModal from './components/AddElementModal';
+import ProjectModal from './components/ProjectModal';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState("Home");
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -26,7 +27,7 @@ function App() {
       ContentComponent = About;
       break;
     case "projects":
-      ContentComponent = Projects;
+      ContentComponent = ProjectModal;
       break;
     case "contact":
       ContentComponent = Contact;
@@ -34,14 +35,14 @@ function App() {
     case "signin":
       ContentComponent = SignIn;
       break;
-    case "home":
+    case "Home":
     default:
       ContentComponent = Home;
   }
 
   return (
     <>
-      <AddElementModal />
+      
       <Navbar onLinkClick={handlePageChange} />
       <ContentComponent />
 

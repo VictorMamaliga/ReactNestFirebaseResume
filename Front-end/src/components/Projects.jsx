@@ -1,6 +1,7 @@
 import  {useProjects} from '../api/useApi'
 import styles from '../styles/Projects.module.scss'
 import AddElementModal from './AddElementModal'; // Import the AddElementModal component
+import ProjectModal from './ProjectModal';
 
 
 const Projects = () => {
@@ -11,8 +12,10 @@ const Projects = () => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
-    console.log(projects);
+    
     return (
+        <>
+        <div>
         <section id="projects" className={styles.projectsContainer}>
             <div className={styles.container}>
                 <h2>Projects</h2>
@@ -30,6 +33,9 @@ const Projects = () => {
                 </div>
             </div>
         </section>
+        </div>
+      
+        </>
     );
 };
 

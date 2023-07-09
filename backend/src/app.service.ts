@@ -17,14 +17,29 @@ export class AppService {
   async getAllProjects() {
     const projectsCol = db.collection('projects');
     const snapshot = await projectsCol.get();
-    const projects = snapshot.docs.map(doc => doc.data());
+    const projects = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     return projects;
   }
+
+  // async getProject(id) {
+  //   const project = await db.collection('projects').doc(id).get();
+  //   return project.exists ? { id: project.id, ...project.data() } : null;
+  // }
 
   async submitData(data) {
     const projectsCol = db.collection('projects');
     const docRef = await projectsCol.add(data);
-    return { id: docRef.id }; // Return a JSON object instead of a string
-}
+    return { id: docRef.id };
+  }
 
+  async updateProject(id, data) {
+    const docRef = db.collection('projects').doc(id);
+    await docRef.update(data);
+    return { id, ...data };
+  }
+
+  async deleteProject(id) {
+    await db.collection('projects').doc(id).delete();
+    return { id };
+  }
 }

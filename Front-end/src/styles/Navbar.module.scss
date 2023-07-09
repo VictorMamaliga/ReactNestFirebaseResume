@@ -1,41 +1,28 @@
 @import './variables.scss'; // import variables
 @import './general.scss';
 
-
-
-.backgroundBlur {
+.backgroundBlur, .backgroundUnblur {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
     background: url("https://i1.sndcdn.com/artworks-vG6nOAtoVLNG20KS-SMf9QQ-t500x500.jpg") no-repeat center center;
-    background-size: 1700px;
+    background-size: cover;
     z-index: -1;
-    filter: blur(0px);
     transition: filter 1s linear;
 }
 
 .backgroundUnblur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
     background: url("https://img.a1.ro/?u=https%3A%2F%2Fa1.ro%2Fuploads%2Fmodules%2Fnews%2F0%2F2018%2F11%2F28%2F822872%2F154341534697a2e89d.jpg") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-    opacity: 1;
-    transition: opacity 1s linear;
 }
-
 
 nav {
     position: fixed;
     width: 100vw;
     background-color: $primary-color;
     color: red;
-    padding: 20px 0;
+    padding: 1.25rem 0;
     z-index: 100;
 
     ul {
@@ -52,6 +39,18 @@ nav {
 
         &:hover {
             color: darken($light-color, 10%);
+        }
+    }
+
+    @media (max-width: 768px) { // for tablet devices and smaller
+        ul {
+            font-size: 1.6em;
+        }
+    }
+
+    @media (max-width: 480px) { // for mobile devices and smaller
+        ul {
+            font-size: 1.3em;
         }
     }
 

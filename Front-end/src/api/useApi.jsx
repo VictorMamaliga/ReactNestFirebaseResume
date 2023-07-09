@@ -7,15 +7,15 @@ const useProjects = () => {
 
     const submitData = async (data, onSuccess, onError) => {
         try {
-            const response = await fetch('http://localhost:3000/nicolae', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            // If there is an image file, upload it first
+            if (data.imageFile) {
+                const storageRef = firebase.storage().ref();
+                const fileRef = storageRef.child(data.imageFile.name);
+                await fileRef.put(data.imageFile);
+                // After upload is complete, get the URL to the uploaded file
+                data.imageURL = await fileRef.getDownloadURL();
+                // Remove the imageFile property, we don't need it anymore
+                delete data.imageFile;
             }
             const result = await response.json();
             console.log('Document written with ID: ', result.id);
@@ -26,6 +26,42 @@ const useProjects = () => {
         }
     };
 
+
+    const updateProject = async (id, data) => {
+        try {
+            // If there is an image file, upload it first
+            if (data.imageFile) {
+                const storageRef = firebase.storage().ref();
+                const fileRef = storageRef.child(data.imageFile.name);
+                await fileRef.put(data.imageFile);
+                // After upload is complete, get the URL to the uploaded file
+                data.imageURL = await fileRef.getDownloadURL();
+                // Remove the imageFile property, we don't need it anymore
+                delete data.imageFile;
+            }
+    
+            const updatedProject = await response.json();
+            setProjects(projects.map(project =>
+                project.id === id ? updatedProject : project
+            ));
+        } catch (error) {
+            console.error("Error updating document: ", error);
+        }
+    };
+
+    const deleteProject = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:3000/nicolae/${id}`, {
+                method: 'DELETE',
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            setProjects(projects.filter(project => project.id !== id));
+        } catch (error) {
+            console.error("Error deleting document: ", error);
+        }
+    };
 
     useEffect(() => {
         fetch('http://localhost:3000/nicolae')
@@ -45,9 +81,9 @@ const useProjects = () => {
             });
     }, []);
 
-    return { projects, loading, error ,submitData};
+    return { projects, loading, error ,submitData, updateProject, deleteProject};
 
-    
+
 };
 
 

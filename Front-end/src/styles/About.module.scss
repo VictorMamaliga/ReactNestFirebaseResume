@@ -2,11 +2,13 @@
 @import './general.scss';
 
 .aboutContainer {
-    width: 60vw;
-    height: 70vh;
-    margin-left: 20%;
-    padding: 50px 0;
-    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    height: 900px;
+    
 
     h1 {
         font-size: 2.5em;
@@ -34,7 +36,7 @@
             color: $dark-color;
 
             .skillLevel {
-                width: 70%;
+                width:400px;
                 height: 20px;
                 background-color: lighten($dark-color, 30%);
                 border-radius: 10px;

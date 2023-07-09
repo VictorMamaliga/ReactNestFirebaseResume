@@ -6,6 +6,7 @@ import Projects from './Projects';
 import Contact from './Contact';
 import SignIn from './SignIn';
 import LandingPage from './LandingPage';
+import ProjectModal from './ProjectModal';
 
 const Home = () => {
     const buttons = [
@@ -18,6 +19,7 @@ const Home = () => {
         <div className={styles.homeContainer}>
             <LandingPage />
             <About />
+            {/* //<ProjectModal/> */}
             <Projects />
             <Contact />
             <SignIn />

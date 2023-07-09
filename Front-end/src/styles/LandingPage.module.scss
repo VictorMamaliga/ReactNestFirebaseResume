@@ -12,8 +12,8 @@
     overflow: auto;
 
     
-    max-width: 2200px;
-    margin-left: 200px;
+    //max-width: 2200px;
+    //margin-left: 200px;
     @media (max-width: 900px) {
         height: auto;
     }
@@ -33,7 +33,14 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
+            transition: transform 0.8s ease-in;
+            
+
             margin-top: 200px;
+            
+            &:hover {
+                transform: scale(1.2);
+            }
         }
 
         h1 {

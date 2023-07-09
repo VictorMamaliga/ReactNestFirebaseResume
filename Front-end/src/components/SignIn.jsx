@@ -9,11 +9,11 @@ const SignIn = () => {
                 <form>
                     <div className={styles.formGroup}>
                         <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" required />
+                        <input type="email" id="emailInput" required />
                     </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="password">Password:</label>
-                        <input type="password" id="password" required />
+                        <input type="password" id="passwordInput" required />
                     </div>
                     <button type="submit" className={styles.btn}>Sign In</button>
                 </form>

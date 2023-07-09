@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from '../styles/Navbar.module.scss';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ onLinkClick }) => {
     const [scroll, setScroll] = useState(0);
     const [currentUnblurIndex, setCurrentUnblurIndex] = useState(-1);
     const [hasStartedScrolling, setHasStartedScrolling] = useState(false);
@@ -27,7 +27,7 @@ const Navbar = () => {
             setHasStartedScrolling(true);
         }
 
-        const unblurIndex = Math.floor(totalScroll / 600); 
+        const unblurIndex = Math.floor(totalScroll / 800);
 
         if (unblurIndex >= 0 && unblurIndex < linkRefs.current.length) {
             setCurrentUnblurIndex(unblurIndex);
@@ -49,7 +49,7 @@ const Navbar = () => {
                     {links.map((link, index) => (
                         <li key={index} ref={el => linkRefs.current[index] = el}
                             className={hasStartedScrolling ? (index === currentUnblurIndex ? styles.unblur : styles.blur) : ''}>
-                            <Link to={link.to}>{link.text}</Link>
+                            <a href="#" onClick={() => onLinkClick(link.text.toLowerCase())}>{link.text}</a>
                         </li>
                     ))}
                 </ul>

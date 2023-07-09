@@ -7,15 +7,15 @@ const useProjects = () => {
 
     const submitData = async (data, onSuccess, onError) => {
         try {
-            // If there is an image file, upload it first
-            if (data.imageFile) {
-                const storageRef = firebase.storage().ref();
-                const fileRef = storageRef.child(data.imageFile.name);
-                await fileRef.put(data.imageFile);
-                // After upload is complete, get the URL to the uploaded file
-                data.imageURL = await fileRef.getDownloadURL();
-                // Remove the imageFile property, we don't need it anymore
-                delete data.imageFile;
+            const response = await fetch('http://localhost:3000/nicolae', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
             const result = await response.json();
             console.log('Document written with ID: ', result.id);
@@ -29,17 +29,16 @@ const useProjects = () => {
 
     const updateProject = async (id, data) => {
         try {
-            // If there is an image file, upload it first
-            if (data.imageFile) {
-                const storageRef = firebase.storage().ref();
-                const fileRef = storageRef.child(data.imageFile.name);
-                await fileRef.put(data.imageFile);
-                // After upload is complete, get the URL to the uploaded file
-                data.imageURL = await fileRef.getDownloadURL();
-                // Remove the imageFile property, we don't need it anymore
-                delete data.imageFile;
+            const response = await fetch(`http://localhost:3000/nicolae/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-    
             const updatedProject = await response.json();
             setProjects(projects.map(project =>
                 project.id === id ? updatedProject : project
@@ -81,7 +80,7 @@ const useProjects = () => {
             });
     }, []);
 
-    return { projects, loading, error ,submitData, updateProject, deleteProject};
+    return { projects, loading, error, submitData,deleteProject, updateProject};
 
 
 };

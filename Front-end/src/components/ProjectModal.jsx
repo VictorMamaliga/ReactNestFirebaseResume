@@ -11,6 +11,8 @@ const ProjectModal = () => {
   const [showProjects, setShowProjects] = useState(false);
   const [projectData, setProjectData] = useState({ name: '', description: '', linkURL: '',image: '' });
   const [projectId, setProjectId] = useState(null);
+  const [file, setFile] = useState(null); // Add this line
+
 
   const openModal = (id) => {
     if (id) {
@@ -25,7 +27,7 @@ const ProjectModal = () => {
 
   const closeModal = () => {
     setIsOpen(false);
-    setProjectData({ name: '', description: '', linkURL: '' });
+    setProjectData({ name: '', description: '', linkURL: '' ,image: '' });
     setProjectId(null);
   };
 
@@ -61,6 +63,7 @@ const ProjectModal = () => {
         </div>
       ))}
 
+
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className={styles.modal}>
         <input 
           type="text"
@@ -74,7 +77,7 @@ const ProjectModal = () => {
           onChange={e => setProjectData({ ...projectData, description: e.target.value })}
           placeholder="Project Description"
         />
-        <input type="file" onChange={e => setProjectData({ ...projectData, imageFile: e.target.files[0] })} />
+        <input type="file" onChange={e => setFile(e.target.files[0])} /> {/* Modify this line */}
 
         <input 
           type="text"

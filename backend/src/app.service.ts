@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import admin from 'firebase-admin';
 import key from '../firebaseConfig/firestoreKey.json';
 
+
 admin.initializeApp({
   credential: admin.credential.cert({
     projectId: "victor-resume-63b88",

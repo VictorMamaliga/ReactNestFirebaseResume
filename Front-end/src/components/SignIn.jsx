@@ -1,12 +1,19 @@
 import styles from '../styles/signIn.module.scss'
 
 
+
 const SignIn = () => {
+
+
+    const handleLogin = (e)=>{
+        e.preventDefault();
+    }
+
     return (
         <section id='signIn' className={styles.signIn}>
             <div className={styles.container}>
                 <h2>Sign In</h2>
-                <form>
+                <form onSubmit={handleLogin}>
                     <div className={styles.formGroup}>
                         <label htmlFor="email">Email:</label>
                         <input type="email" id="emailInput" required />

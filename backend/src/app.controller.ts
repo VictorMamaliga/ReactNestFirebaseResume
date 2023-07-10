@@ -1,9 +1,10 @@
-import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Res,Post, Put, Delete, Body, Param, UseInterceptors, UploadedFile } from '@nestjs/common';
 import { AppService } from './app.service';
+import { FileInterceptor } from '@nestjs/platform-express';
 
-@Controller('/nicolae')
+@Controller('nicolae')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get()
   getAllProjects() {
@@ -15,6 +16,18 @@ export class AppController {
   //   return this.appService.getAllProjects();
   // }
 
+  @Post('imageupload')
+  @UseInterceptors(FileInterceptor('file'))
+  uploadImage(@UploadedFile() file: Express.Multer.File, @Res() res: Response) {
+    return this.appService.uploadImage(file, res);
+  }
+
+  @Post('test')
+  test() {
+    console.log("serrrrreevvvv")
+    // return this.appService.test();
+  }
+  
   @Post()
   submitData(@Body() data) {
     return this.appService.submitData(data);

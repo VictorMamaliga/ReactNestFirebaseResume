@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+
+body {
+    background-color: $light-color;
+    color: $dark-color;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+// @font-face {
+//     font-family: "Pricedown";
+//     src: local("Pricedown"),
+//       url("../../fonts/pricedow.ttf") format("truetype");
+//     font-weight: normal;
+//   }
+
+  @font-face {
+    font-family: Pricedown;
+    src: url(../../fonts/pricedow.ttf);
+  }

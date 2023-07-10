@@ -1,0 +1,93 @@
+@import './variables.scss'; // import variables
+@import './general.scss';
+
+.backgroundBlur, .backgroundUnblur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url("https://i1.sndcdn.com/artworks-vG6nOAtoVLNG20KS-SMf9QQ-t500x500.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    transition: filter 1s linear;
+}
+
+.backgroundUnblur {
+    background: url("https://img.a1.ro/?u=https%3A%2F%2Fa1.ro%2Fuploads%2Fmodules%2Fnews%2F0%2F2018%2F11%2F28%2F822872%2F154341534697a2e89d.jpg") no-repeat center center;
+}
+
+nav {
+    position: fixed;
+    width: 100vw;
+    background-color: $primary-color;
+    color: red;
+    padding: 1.25rem 0;
+    z-index: 100;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        font-size: 2.3em;
+    }
+
+    a {
+        color: $light-color;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            color: darken($light-color, 10%);
+        }
+    }
+
+    @media (max-width: 768px) { // for tablet devices and smaller
+        ul {
+            font-size: 1.6em;
+        }
+    }
+
+    @media (max-width: 480px) { // for mobile devices and smaller
+        ul {
+            font-size: 1.3em;
+        }
+    }
+
+    .blur {
+        animation: blur 2s forwards;
+    }
+
+    .unblur {
+        animation: unblur 2s forwards;
+    }
+
+    @keyframes blur {
+        0% {
+            filter: blur(0px);
+        }
+
+        100% {
+            filter: blur(4px);
+        }
+    }
+
+    @keyframes unblur {
+        0% {
+            filter: blur(4px);
+        }
+
+        100% {
+            filter: blur(0px);
+        }
+    }
+}
+
+.progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
+    z-index: 101;
+}

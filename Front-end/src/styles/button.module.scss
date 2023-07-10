@@ -1,0 +1,48 @@
+.scroll {
+    position: relative;
+    color: aqua;
+    width: 220px;
+    height: 45px;
+    border-radius: 50px;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px;
+    border: 3px solid rgb(5, 4, 4);
+  }
+  
+  .mscroll {
+    overflow: hidden;
+    height: 100%;
+    white-space: nowrap;
+    margin: 0px;
+    background-color: transparent;
+    font-size: 0px;
+    display: inline-block;
+  }
+  
+  span {
+    font-size: 40px;
+    display: inline-block;
+    min-width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    color: black;
+    position: relative;
+  }
+  
+  .mscroll:hover {
+    animation: scrollText 10s infinite linear;
+  }
+  
+  @keyframes scrollText {
+    from {
+      transform: translateX(0%);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }

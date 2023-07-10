@@ -1,0 +1,23 @@
+$primary-color: #008CBA;
+$secondary-color: #fcf816;
+$text-color: #333;
+$font-stack: 'Roboto', sans-serif;
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: $secondary-color;
+    font-family: $font-stack;
+    padding: 2em; // Consider adding padding for better look and feel
+    font-size: 1rem;
+
+    @media (max-width: 768px) { // for tablet devices and smaller
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) { // for mobile devices and smaller
+        font-size: 0.8rem;
+    }
+}

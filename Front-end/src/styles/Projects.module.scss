@@ -1,0 +1,64 @@
+$primary-color: #008CBA;
+$border-color: #ddd;
+$modal-bg-color: #ffffff;
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalButton {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: $primary-color;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.projectItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.projectImage {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $modal-bg-color;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+  
+  input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+  }
+}

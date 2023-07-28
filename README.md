@@ -17,7 +17,7 @@ Before you start, make sure you have a working NodeJS environment, preferably wi
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/<your-github-username>/ReactNestFirebaseResume.git
+git clone https://github.com/VictorMamaliga/ReactNestFirebaseResume.git
 cd ReactNestFirebaseResume
 
 
